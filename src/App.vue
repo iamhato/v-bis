@@ -8,12 +8,12 @@ const splideOptions = {
   type   : 'loop',
   drag   : 'free',
   focus  : 'center',
-  autoWidth: true,    // ★重要：画像の本来の幅（200px）を優先する
-  gap    : '5px',    // 画像間の隙間
+  autoWidth: true,
+  gap    : '5px',
   arrows : false,
   pagination: false,
   autoScroll: {
-    speed: 0.5,       // 0.3だと少し遅すぎてカクついて見える場合があるので0.5程度がおすすめ
+    speed: 0.3,
     pauseOnHover: false,
     pauseOnFocus: false,
   },
@@ -176,14 +176,14 @@ function closeModal() {
             <img src="/images/logo.png" alt="v-BiS logo" />
           </a>
           <div class="header-wrapper">
-            <div class="typing">Photo Gallery for BiS</div>
+            <div class="typing">Photo Gallery for BiS 3rd Gen</div>
           </div>
         </div>
       </Transition>
       <Transition appear name="heading-box">
         <div class="heading-box">
           <h2>
-            <span class="gradient-text">PHOTO<br />GALLERY<br />for<br />BiS</span>
+            <span class="gradient-text">PHOTO<br />GALLERY<br />for<br />3期BiS</span>
           </h2>
         </div>
       </Transition>
@@ -192,32 +192,47 @@ function closeModal() {
     <Transition appear name="instagram">
       <div id="instagram">
         <Splide :options="splideOptions" :extensions="{ AutoScroll }">
-          <SplideSlide v-for="n in 10" :key="n">
-            <img src="https://instagram.ffuk2-1.fna.fbcdn.net/v/t51.82787-15/656027445_18578015272029946_998324206827561855_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ig_cache_key=MzE5NTE5Nzg2ODYzNjMyOTA0MQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTQ0MC5zZHIuQzMifQ%3D%3D&_nc_ohc=FHsFNlmj-hMQ7kNvwG_d_tz&_nc_oc=AdpljjjRvu5v4awHKI-N0T2pINrvFU7s3-Eqg2z-QkMR1kZugtD9FHQlljrNI3UdgEk&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.ffuk2-1.fna&_nc_gid=LV3fN6-4HnEf2Pt_-xK7ug&_nc_ss=7a22e&oh=00_Af3v3q-HKDBOmfeto-xwVF3ZZlEuV6xuHNZPyo3rUxP2gA&oe=69F2E5C5" class="splide-img">
-          </SplideSlide>
-          <SplideSlide v-for="n in 10" :key="n">
-            <img src="https://instagram.ffuk2-1.fna.fbcdn.net/v/t51.82787-15/656027445_18578015272029946_998324206827561855_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ig_cache_key=MzE5NTE5Nzg2ODYzNjMyOTA0MQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTQ0MC5zZHIuQzMifQ%3D%3D&_nc_ohc=FHsFNlmj-hMQ7kNvwG_d_tz&_nc_oc=AdpljjjRvu5v4awHKI-N0T2pINrvFU7s3-Eqg2z-QkMR1kZugtD9FHQlljrNI3UdgEk&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.ffuk2-1.fna&_nc_gid=LV3fN6-4HnEf2Pt_-xK7ug&_nc_ss=7a22e&oh=00_Af3v3q-HKDBOmfeto-xwVF3ZZlEuV6xuHNZPyo3rUxP2gA&oe=69F2E5C5" class="splide-img">
-          </SplideSlide>
-          <SplideSlide v-for="n in 10" :key="n">
-            <img src="https://instagram.ffuk2-1.fna.fbcdn.net/v/t51.82787-15/656027445_18578015272029946_998324206827561855_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ig_cache_key=MzE5NTE5Nzg2ODYzNjMyOTA0MQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTQ0MC5zZHIuQzMifQ%3D%3D&_nc_ohc=FHsFNlmj-hMQ7kNvwG_d_tz&_nc_oc=AdpljjjRvu5v4awHKI-N0T2pINrvFU7s3-Eqg2z-QkMR1kZugtD9FHQlljrNI3UdgEk&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.ffuk2-1.fna&_nc_gid=LV3fN6-4HnEf2Pt_-xK7ug&_nc_ss=7a22e&oh=00_Af3v3q-HKDBOmfeto-xwVF3ZZlEuV6xuHNZPyo3rUxP2gA&oe=69F2E5C5" class="splide-img">
+          <SplideSlide>
+            <img src="/images/top-img1.jpg" class="splide-img">
           </SplideSlide>
           <SplideSlide>
-            <img src="https://instagram.ffuk2-1.fna.fbcdn.net/v/t51.82787-15/656027445_18578015272029946_998324206827561855_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ig_cache_key=MzE5NTE5Nzg2ODYzNjMyOTA0MQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTQ0MC5zZHIuQzMifQ%3D%3D&_nc_ohc=FHsFNlmj-hMQ7kNvwG_d_tz&_nc_oc=AdpljjjRvu5v4awHKI-N0T2pINrvFU7s3-Eqg2z-QkMR1kZugtD9FHQlljrNI3UdgEk&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.ffuk2-1.fna&_nc_gid=LV3fN6-4HnEf2Pt_-xK7ug&_nc_ss=7a22e&oh=00_Af3v3q-HKDBOmfeto-xwVF3ZZlEuV6xuHNZPyo3rUxP2gA&oe=69F2E5C5" class="splide-img">
+            <img src="/images/top-img2.jpg" class="splide-img">
           </SplideSlide>
-          <SplideSlide v-for="n in 10" :key="n">
-            <img src="https://instagram.ffuk2-1.fna.fbcdn.net/v/t51.82787-15/656027445_18578015272029946_998324206827561855_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ig_cache_key=MzE5NTE5Nzg2ODYzNjMyOTA0MQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTQ0MC5zZHIuQzMifQ%3D%3D&_nc_ohc=FHsFNlmj-hMQ7kNvwG_d_tz&_nc_oc=AdpljjjRvu5v4awHKI-N0T2pINrvFU7s3-Eqg2z-QkMR1kZugtD9FHQlljrNI3UdgEk&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.ffuk2-1.fna&_nc_gid=LV3fN6-4HnEf2Pt_-xK7ug&_nc_ss=7a22e&oh=00_Af3v3q-HKDBOmfeto-xwVF3ZZlEuV6xuHNZPyo3rUxP2gA&oe=69F2E5C5" class="splide-img">
+          <SplideSlide>
+            <img src="/images/top-img3.jpg" class="splide-img">
           </SplideSlide>
-          <SplideSlide v-for="n in 10" :key="n">
-            <img src="https://instagram.ffuk2-1.fna.fbcdn.net/v/t51.82787-15/656027445_18578015272029946_998324206827561855_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ig_cache_key=MzE5NTE5Nzg2ODYzNjMyOTA0MQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTQ0MC5zZHIuQzMifQ%3D%3D&_nc_ohc=FHsFNlmj-hMQ7kNvwG_d_tz&_nc_oc=AdpljjjRvu5v4awHKI-N0T2pINrvFU7s3-Eqg2z-QkMR1kZugtD9FHQlljrNI3UdgEk&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.ffuk2-1.fna&_nc_gid=LV3fN6-4HnEf2Pt_-xK7ug&_nc_ss=7a22e&oh=00_Af3v3q-HKDBOmfeto-xwVF3ZZlEuV6xuHNZPyo3rUxP2gA&oe=69F2E5C5" class="splide-img">
+          <SplideSlide>
+            <img src="/images/top-img4.jpg" class="splide-img">
+          </SplideSlide>  
+          <SplideSlide>
+            <img src="/images/top-img5.jpg" class="splide-img">
           </SplideSlide>
-          <SplideSlide v-for="n in 10" :key="n">
-            <img src="https://instagram.ffuk2-1.fna.fbcdn.net/v/t51.82787-15/656027445_18578015272029946_998324206827561855_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ig_cache_key=MzE5NTE5Nzg2ODYzNjMyOTA0MQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTQ0MC5zZHIuQzMifQ%3D%3D&_nc_ohc=FHsFNlmj-hMQ7kNvwG_d_tz&_nc_oc=AdpljjjRvu5v4awHKI-N0T2pINrvFU7s3-Eqg2z-QkMR1kZugtD9FHQlljrNI3UdgEk&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.ffuk2-1.fna&_nc_gid=LV3fN6-4HnEf2Pt_-xK7ug&_nc_ss=7a22e&oh=00_Af3v3q-HKDBOmfeto-xwVF3ZZlEuV6xuHNZPyo3rUxP2gA&oe=69F2E5C5" class="splide-img">
+          <SplideSlide>
+            <img src="/images/top-img6.png" class="splide-img">
           </SplideSlide>
-          <SplideSlide v-for="n in 10" :key="n">
-            <img src="https://instagram.ffuk2-1.fna.fbcdn.net/v/t51.82787-15/656027445_18578015272029946_998324206827561855_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ig_cache_key=MzE5NTE5Nzg2ODYzNjMyOTA0MQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTQ0MC5zZHIuQzMifQ%3D%3D&_nc_ohc=FHsFNlmj-hMQ7kNvwG_d_tz&_nc_oc=AdpljjjRvu5v4awHKI-N0T2pINrvFU7s3-Eqg2z-QkMR1kZugtD9FHQlljrNI3UdgEk&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.ffuk2-1.fna&_nc_gid=LV3fN6-4HnEf2Pt_-xK7ug&_nc_ss=7a22e&oh=00_Af3v3q-HKDBOmfeto-xwVF3ZZlEuV6xuHNZPyo3rUxP2gA&oe=69F2E5C5" class="splide-img">
+          <SplideSlide>
+            <img src="/images/top-img7.jpg" class="splide-img">
           </SplideSlide>
-          <SplideSlide v-for="n in 10" :key="n">
-            <img src="https://instagram.ffuk2-1.fna.fbcdn.net/v/t51.82787-15/656027445_18578015272029946_998324206827561855_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ig_cache_key=MzE5NTE5Nzg2ODYzNjMyOTA0MQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTQ0MC5zZHIuQzMifQ%3D%3D&_nc_ohc=FHsFNlmj-hMQ7kNvwG_d_tz&_nc_oc=AdpljjjRvu5v4awHKI-N0T2pINrvFU7s3-Eqg2z-QkMR1kZugtD9FHQlljrNI3UdgEk&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.ffuk2-1.fna&_nc_gid=LV3fN6-4HnEf2Pt_-xK7ug&_nc_ss=7a22e&oh=00_Af3v3q-HKDBOmfeto-xwVF3ZZlEuV6xuHNZPyo3rUxP2gA&oe=69F2E5C5" class="splide-img">
+          <SplideSlide>
+            <img src="/images/top-img8.jpg" class="splide-img">
+          </SplideSlide>
+          <SplideSlide>
+            <img src="/images/top-img9.jpg" class="splide-img">
+          </SplideSlide>
+          <SplideSlide>
+            <img src="/images/top-img10.jpg" class="splide-img">
+          </SplideSlide>
+          <SplideSlide>
+            <img src="/images/top-img11.jpg" class="splide-img">
+          </SplideSlide>
+          <SplideSlide>
+            <img src="/images/top-img12.jpg" class="splide-img">
+          </SplideSlide>
+          <SplideSlide>
+            <img src="/images/top-img13.jpg" class="splide-img">
+          </SplideSlide>
+          <SplideSlide>
+            <img src="/images/top-img14.jpg" class="splide-img">
           </SplideSlide>
         </Splide>
       </div>
@@ -566,7 +581,7 @@ footer .link         { flex-direction: row; margin-bottom: 8px; padding-right: 2
   .member { padding: 5px 10px !important; }
   .center_for_pc { margin: 0 !important; }
   .heading-box { position: static; }
-  .heading-box h2 { font-size: calc(280vw / 17); margin-top: -20px; margin-left: 12px; }
+  .heading-box h2 { font-size: 50px; margin-top: -20px; margin-left: 12px; }
   .projects { width: 100% !important; }
   .project-image-wrapper { text-align: center; }
   .project-image-wrapper img { width: 96% !important; height: auto; }
