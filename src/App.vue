@@ -322,6 +322,7 @@ function closeModal() {
   transition: transform 0.3s linear;
   z-index: 100;
   opacity: 0.4;
+  display: none;
 }
 
 .return-bottom {
@@ -339,6 +340,7 @@ function closeModal() {
   transition: transform 0.3s linear;
   z-index: 100;
   opacity: 0.4;
+  display: none;
 }
 
 .header-background {
