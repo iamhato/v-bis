@@ -11,6 +11,9 @@ const splideOptions = {
   autoWidth: true,
   gap    : '5px',
   arrows : false,
+  drag: false,
+  touch: false,
+  swipe: false, 
   pagination: false,
   autoScroll: {
     speed: 0.3,
@@ -183,7 +186,7 @@ function closeModal() {
       <Transition appear name="heading-box">
         <div class="heading-box">
           <h2>
-            <span class="gradient-text">PHOTO<br />GALLERY<br />for<br />3期BiS</span>
+            <span class="gradient-text">PHOTO<br />GALLERY<br />for<br />BiS</span>
           </h2>
         </div>
       </Transition>
