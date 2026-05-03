@@ -191,7 +191,7 @@ function closeModal() {
         </div>
       </Transition>
     </div>
-
+<!--
     <Transition appear name="instagram">
       <div id="instagram">
         <Splide :options="splideOptions" :extensions="{ AutoScroll }">
@@ -241,7 +241,7 @@ function closeModal() {
       </div>
     </Transition>
   </div>
-
+-->
   <div class="title-container">
     <div class="members">
       <Transition appear name="menu1">
