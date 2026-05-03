@@ -272,7 +272,7 @@ function closeModal() {
     </div>
   </div>
 
-  <TransitionGroup class="projects" name="projects" tag="div">
+  <div class="projects" name="projects" tag="div">
     <div
       class="project"
       v-for="project in reversedProjects"
@@ -285,7 +285,7 @@ function closeModal() {
         <span class="image-text">{{ project.title2 }}</span>
       </div>
     </div>
-  </TransitionGroup>
+  </div>
 
   <div v-if="isModalOpen" class="modal" ref="modalEl" @click="closeModal">
     <span class="close" @click.stop="closeModal">&times;</span>
@@ -473,7 +473,7 @@ function closeModal() {
   position: fixed;
   flex-direction: column;
   right: -10px;
-  bottom: 54px;
+  top: 54px;
   z-index: 100;
   font-family: 'Patrick Hand', cursive;
 }
