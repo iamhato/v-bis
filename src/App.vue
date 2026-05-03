@@ -147,6 +147,14 @@ function setMember(member) {
   memberFilter.value = member
 }
 
+function scrollToTop() {
+  document.getElementById('top')?.scrollIntoView({ behavior: 'smooth' })
+}
+
+function scrollToBottom() {
+  document.getElementById('bottom')?.scrollIntoView({ behavior: 'smooth' })
+}
+
 function openModal(image) {
   currentImage.value = image
   isModalOpen.value = true
@@ -165,8 +173,8 @@ function closeModal() {
 </script>
 
 <template>
-  <a href="#bottom" class="return-bottom"><i class="fas fa-angle-double-down"></i></a>
-  <a href="#top" class="return-top"><i class="fas fa-angle-double-up"></i></a>
+  <div class="return-bottom" @click="scrollToBottom"><i class="fas fa-angle-double-down"></i></div>
+  <div class="return-top" @click="scrollToTop"><i class="fas fa-angle-double-up"></i></div>
 
   <div class="header-background" id="top">
     <div class="center_for_pc">
@@ -244,22 +252,22 @@ function closeModal() {
   <div class="title-container">
     <div class="members">
       <Transition appear name="menu1">
-        <div class="member bis" :class="{ active: memberFilter === 'BiS' }" @click="setMember('BiS')">BiS</div>
+        <div class="member bis" :class="{ active: memberFilter === 'BiS' }" @click.stop="setMember('BiS')">BiS</div>
       </Transition>
       <Transition appear name="menu2">
-        <div class="member ito" :class="{ active: memberFilter === 'MUSENSiTEEBU' }" @click="setMember('MUSENSiTEEBU')">🦕 iTO</div>
+        <div class="member ito" :class="{ active: memberFilter === 'MUSENSiTEEBU' }" @click.stop="setMember('MUSENSiTEEBU')">🦕 iTO</div>
       </Transition>
       <Transition appear name="menu3">
-        <div class="member chamo" :class="{ active: memberFilter === 'CHANTMONKEE' }" @click="setMember('CHANTMONKEE')">🐵 CHANT</div>
+        <div class="member chamo" :class="{ active: memberFilter === 'CHANTMONKEE' }" @click.stop="setMember('CHANTMONKEE')">🐵 CHANT</div>
       </Transition>
       <Transition appear name="menu4">
-        <div class="member neo" :class="{ active: memberFilter === 'NEOTREES' }" @click="setMember('NEOTREES')">🌲 NEO</div>
+        <div class="member neo" :class="{ active: memberFilter === 'NEOTREES' }" @click.stop="setMember('NEOTREES')">🌲 NEO</div>
       </Transition>
       <Transition appear name="menu5">
-        <div class="member toggy" :class="{ active: memberFilter === 'TOGGY' }" @click="setMember('TOGGY')">👶 TOGGY</div>
+        <div class="member toggy" :class="{ active: memberFilter === 'TOGGY' }" @click.stop="setMember('TOGGY')">👶 TOGGY</div>
       </Transition>
       <Transition appear name="menu6">
-        <div class="member nano" :class="{ active: memberFilter === 'NANO3' }" @click="setMember('NANO3')">🌷 NANO3</div>
+        <div class="member nano" :class="{ active: memberFilter === 'NANO3' }" @click.stop="setMember('NANO3')">🌷 NANO3</div>
       </Transition>
     </div>
   </div>
@@ -321,6 +329,7 @@ function closeModal() {
   transition: transform 0.3s linear;
   z-index: 100;
   opacity: 0.4;
+  cursor: pointer;
 }
 
 .return-bottom {
@@ -338,6 +347,7 @@ function closeModal() {
   transition: transform 0.3s linear;
   z-index: 100;
   opacity: 0.4;
+  cursor: pointer;
 }
 
 .header-background {
@@ -477,6 +487,10 @@ function closeModal() {
   cursor: pointer;
   transition: all 0.2s;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
 }
 .members .member:hover { box-shadow: none; }
 .members .member.active { box-shadow: 0 0 0 2px white; }
