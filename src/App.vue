@@ -473,7 +473,7 @@ function closeModal() {
   position: fixed;
   flex-direction: column;
   right: -10px;
-  top: 54px;
+  bottom: 54px;
   z-index: 100;
   font-family: 'Patrick Hand', cursive;
 }
