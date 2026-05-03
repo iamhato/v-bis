@@ -1,7 +1,7 @@
 <script setup>
 import { ref, computed, nextTick } from 'vue'
 import { Splide, SplideSlide } from '@splidejs/vue-splide';
-import { AutoScroll } from '@splidejs/splide-extension-auto-scroll'; // 追加
+import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 import '@splidejs/vue-splide/css';
 
 const splideOptions = {
@@ -11,9 +11,6 @@ const splideOptions = {
   autoWidth: true,
   gap    : '5px',
   arrows : false,
-  drag: false,
-  touch: false,
-  swipe: false, 
   pagination: false,
   autoScroll: {
     speed: 0.3,
@@ -186,11 +183,64 @@ function closeModal() {
       <Transition appear name="heading-box">
         <div class="heading-box">
           <h2>
-            <span class="gradient-text">PHOTO<br />GALLERY<br />for<br />BiS</span>
+            <span class="gradient-text">PHOTO<br />GALLERY<br />for<br />3期BiS</span>
           </h2>
         </div>
       </Transition>
     </div>
+
+    <Transition appear name="instagram">
+      <div id="instagram">
+        <Splide :options="splideOptions" :extensions="{ AutoScroll }">
+          <!-- 最初の2枚はeager（すぐ表示） -->
+          <SplideSlide>
+            <img src="/images/top-img1.jpg" class="splide-img" loading="eager">
+          </SplideSlide>
+          <SplideSlide>
+            <img src="/images/top-img2.jpg" class="splide-img" loading="eager">
+          </SplideSlide>
+          <!-- 3枚目以降はlazy -->
+          <SplideSlide>
+            <img src="/images/top-img3.jpg" class="splide-img" loading="lazy">
+          </SplideSlide>
+          <SplideSlide>
+            <img src="/images/top-img4.jpg" class="splide-img" loading="lazy">
+          </SplideSlide>
+          <SplideSlide>
+            <img src="/images/top-img5.jpg" class="splide-img" loading="lazy">
+          </SplideSlide>
+          <SplideSlide>
+            <img src="/images/top-img6.png" class="splide-img" loading="lazy">
+          </SplideSlide>
+          <SplideSlide>
+            <img src="/images/top-img7.jpg" class="splide-img" loading="lazy">
+          </SplideSlide>
+          <SplideSlide>
+            <img src="/images/top-img8.jpg" class="splide-img" loading="lazy">
+          </SplideSlide>
+          <SplideSlide>
+            <img src="/images/top-img9.jpg" class="splide-img" loading="lazy">
+          </SplideSlide>
+          <SplideSlide>
+            <img src="/images/top-img10.jpg" class="splide-img" loading="lazy">
+          </SplideSlide>
+          <SplideSlide>
+            <img src="/images/top-img11.jpg" class="splide-img" loading="lazy">
+          </SplideSlide>
+          <SplideSlide>
+            <img src="/images/top-img12.jpg" class="splide-img" loading="lazy">
+          </SplideSlide>
+          <SplideSlide>
+            <img src="/images/top-img13.jpg" class="splide-img" loading="lazy">
+          </SplideSlide>
+          <SplideSlide>
+            <img src="/images/top-img14.jpg" class="splide-img" loading="lazy">
+          </SplideSlide>
+        </Splide>
+      </div>
+    </Transition>
+  </div>
+
   <div class="title-container">
     <div class="members">
       <Transition appear name="menu1">
@@ -222,7 +272,7 @@ function closeModal() {
       @click="openModal(project.image)"
     >
       <div class="project-image-wrapper">
-        <img class="project-image" :src="project.image" :alt="project.title2" />
+        <img class="project-image" :src="project.image" :alt="project.title2" loading="lazy" />
         <div class="gradient-overlay"></div>
         <span class="image-text">{{ project.title2 }}</span>
       </div>
@@ -231,7 +281,7 @@ function closeModal() {
 
   <div v-if="isModalOpen" class="modal" ref="modalEl" @click="closeModal">
     <span class="close" @click.stop="closeModal">&times;</span>
-    <img class="modal-content" :src="currentImage" alt="Modal Image" />
+    <img class="modal-content" :src="currentImage" alt="Modal Image" loading="lazy" />
   </div>
 
   <footer id="bottom">
@@ -271,7 +321,6 @@ function closeModal() {
   transition: transform 0.3s linear;
   z-index: 100;
   opacity: 0.4;
-  display: none;
 }
 
 .return-bottom {
@@ -289,7 +338,6 @@ function closeModal() {
   transition: transform 0.3s linear;
   z-index: 100;
   opacity: 0.4;
-  display: none;
 }
 
 .header-background {
@@ -351,12 +399,12 @@ function closeModal() {
 
 .center_for_pc { margin: auto; }
 
-.heading-box { 
-  display: flex; 
-  position: absolute; 
-  top: 30px; 
+.heading-box {
+  display: flex;
+  position: absolute;
+  top: 30px;
   left: 30px;
-  }
+}
 .heading-box h2 {
   font-family: 'Helvetica Neue', Helvetica, Arial, Verdana, Roboto, sans-serif !important;
   display: block;
@@ -399,12 +447,12 @@ function closeModal() {
   margin: 5px 7px;
 }
 
-.projects-enter-from { 
-  transform: scale(0.5) translateY(-80px); opacity: 0; 
-  }
-.projects-leave-to   { 
-  transform: translateY(30px); opacity: 0; 
-  }
+.projects-enter-from {
+  transform: scale(0.5) translateY(-80px); opacity: 0;
+}
+.projects-leave-to {
+  transform: translateY(30px); opacity: 0;
+}
 .projects-leave-active { position: absolute; z-index: -1; }
 
 .members {
